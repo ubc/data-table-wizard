@@ -76,7 +76,7 @@ class data_table_wizard_plugin  {
     		// only add the js if editing a page/post
     		global $pagenow;
     		
-    		if (in_array( $pagenow, array( 'post.php',  ) )) {
+    		if (in_array( $pagenow, array( 'post.php', 'post-new.php' ) )) {
     			
     			wp_enqueue_script( 'jquery-ui' );
     			wp_enqueue_script( 'angular_data_table_wizard' );
