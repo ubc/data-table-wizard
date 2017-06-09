@@ -31,5 +31,5 @@ if ( !defined('ABSPATH') )
 	// Run the version check.
 	// If it is successful, continue with initialization for this plugin
 	// Only load and run the init function if we know PHP version can parse it
-    include_once('data_table_wizard_init.php');
+    require_once('data_table_wizard_init.php');
     data_table_wizard_init(__FILE__);
