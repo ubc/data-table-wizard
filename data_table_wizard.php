@@ -1,8 +1,8 @@
 <?php
 /*
    Plugin Name: Data Table Wizard 
-   Version: 1.0
-   Author: Lucas Gerroir
+   Version: 1.0.1
+   Author: Lucas Gerroir, Michael Ha
    Description: Creates a wizard that sets up shortcodes for gravity forms and WP jQuery Data Tables. 
    Text Domain: data_table_wizard
    License: GPLv3

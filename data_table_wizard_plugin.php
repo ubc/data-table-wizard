@@ -6,7 +6,7 @@
 class data_table_wizard_plugin  {
 	
 	// A few global varaibles that are set on ajax call.
-	protected $wp_jdt;
+	protected $adt;
 	protected $post_id;
 	protected $post_content;
 	
@@ -16,7 +16,7 @@ class data_table_wizard_plugin  {
 	function __construct() {
 		
 		// set global variables
-		$this->wp_jdt = null;
+		$this->adt = null;
 		$this->post_id = null;
 		$this->post_content = "";
 	}
@@ -172,13 +172,13 @@ class data_table_wizard_plugin  {
 	
    /*
 	* Set the information retreived from regexing content
-	* @return array  $wp_jdt  an array of strings which include the found shortcode
+	* @return array  $adt  an array of strings which include the found shortcode
 	*/
 	public function set_data_tables_shortcode( ){
 		
-		$wp_jdt = self::get_shortcode('wp_jdt');
+		$adt = self::get_shortcode('adt');
 		
-		return $wp_jdt[0];
+		return $adt[0];
 
 	}
 	
@@ -188,11 +188,11 @@ class data_table_wizard_plugin  {
 	*/
 	public function get_group_data() {
 		
-		if (is_null($this->wp_jdt)) {
+		if (is_null($this->adt)) {
 			return null;
 		}
 		
-		$filterbygroup = self::get_attribute("filterbygroup", $this->wp_jdt);
+		$filterbygroup = self::get_attribute("filterbygroup", $this->adt);
 		
 		return $filterbygroup;
 	}
@@ -204,12 +204,12 @@ class data_table_wizard_plugin  {
 	public function get_coumn_data() {
 		
 		
-		if (is_null($this->wp_jdt)) {
+		if (is_null($this->adt)) {
 			return null;
 		}
 		
 		// get the edit attribute information
-		$edit = self::get_attribute("edit", $this->wp_jdt);
+		$edit = self::get_attribute("edit", $this->adt);
 		
 		$columns = explode(",", $edit);
 		
@@ -285,7 +285,7 @@ class data_table_wizard_plugin  {
 	*/
 	public function current_values() {
 		
-		$this->wp_jdt = self::set_data_tables_shortcode();
+		$this->adt = self::set_data_tables_shortcode();
 	
 		$current_values = [];
 
