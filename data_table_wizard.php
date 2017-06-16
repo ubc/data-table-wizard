@@ -29,8 +29,8 @@ define('DTW_DIR_URL', plugins_url('', DTW_BASENAME));
 // Initialize i18n
 add_action('plugins_loadedi', 'data_table_wizard');
 
-// Run the version check.
-// If it is successful, continue with initialization for this plugin
-// Only load and run the init function if we know PHP version can parse it
-include_once('data_table_wizard_init.php');
-data_table_wizard_init(__FILE__);
+	// Run the version check.
+	// If it is successful, continue with initialization for this plugin
+	// Only load and run the init function if we know PHP version can parse it
+    require_once('data_table_wizard_init.php');
+    data_table_wizard_init(__FILE__);
